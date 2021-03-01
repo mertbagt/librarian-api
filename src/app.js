@@ -5,7 +5,9 @@ const cors = require('cors')
 const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
 
-// const daysRouter = require('./days/days-router')
+const patronsRouter = require('./patrons/patrons-router')
+const booksRouter = require('./books/books-router')
+const booksCheckedOutRouter = require('./booksCheckedOut/booksCheckedOut-router')
 
 const app = express()
 
@@ -17,7 +19,9 @@ app.use(morgan(morganOption))
 app.use(helmet())
 app.use(cors())
 
-// app.use('/days', daysRouter)
+app.use('/patrons', patronsRouter)
+app.use('/books', booksRouter)
+app.use('/checks', booksCheckedOutRouter)
 
 app.get('/', (req, res) => {
     res.send('Hello, world!')
