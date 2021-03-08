@@ -1,26 +1,21 @@
-# Express Boilerplate!
+# Librarian API
+ 
+API datebase to support Librarian app at: https://librarian-drab.vercel.app/
 
-This is a boilerplate project used for starting new projects!
+App allows a librarian to manage a collection of books and track which patron they are checked out to.
 
-## Set up
+API endpoints are:
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+## /books
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+table containing title, page_count, genre and isbn data
 
-## Scripts
+## /patrons
+ 
+table containing first and last (names) data
 
-Start the application `npm start`
+## /checks
 
-Start nodemon for the application `npm run dev`
+table containing patron_id and book_id data.  Used for tracking which books are checked to which patrons.
 
-Run the tests `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's main branch.
+### (JavaScript/Node/Express/PostgreSQL)
